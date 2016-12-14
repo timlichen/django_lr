@@ -7,6 +7,14 @@
 <body>
   <h1>Welcome!</h1>
   <div>
+    {% if messages %}
+      <ul>
+      {% for message in messages %}
+        <li>{{message}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     <fieldset>
       <legend>Registration</legend>
       <form action="/register" method="post">
@@ -38,6 +46,7 @@
           </tr>
         </table>
       </form>
+<<<<<<< HEAD
     </fieldset>
     {{request.session.user}}
     {% for warning in request.session.warnings %}
@@ -66,6 +75,30 @@
       </form>
     </fieldset>
     {{request.session.fail}}
+=======
+    </fieldset>
+
+    <fieldset>
+      <legend>Login</legend>
+      <form action="/login" method="post">
+        {% csrf_token %}
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="text" name="password"></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="Login"></td>
+          </tr>
+        </table>
+      </form>
+    </fieldset>
+
+>>>>>>> 66e2efd558275a9e996b695afa052b8c89cf1701
   </div>
 </body>
 </html>
