@@ -7,6 +7,14 @@
 <body>
   <h1>Welcome!</h1>
   <div>
+    {% if messages %}
+      <ul>
+      {% for message in messages %}
+        <li>{{message}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     <fieldset>
       <legend>Registration</legend>
       <form action="/register" method="post">
@@ -39,13 +47,26 @@
         </table>
       </form>
     </fieldset>
-    {% if messages %}
-      <ul>
-      {% for message in messages %}
-        <li>{{message}}</li>
-      {% endfor %}
-      <ul>
-    {% endif %}
+
+    <fieldset>
+      <legend>Login</legend>
+      <form action="/login" method="post">
+        {% csrf_token %}
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="text" name="password"></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="Login"></td>
+          </tr>
+        </table>
+      </form>
+    </fieldset>
 
   </div>
 </body>

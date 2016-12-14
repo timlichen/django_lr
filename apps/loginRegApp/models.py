@@ -26,7 +26,6 @@ class userManager(models.Manager):
 
             # Data is clean, ready to be written to database
             User.objects.create(first_name = postData['f_name'], last_name = postData['l_name'], email = postData['email'], password = hashed)
-
             return(flag, "gratz")
 
 class User(models.Model):
