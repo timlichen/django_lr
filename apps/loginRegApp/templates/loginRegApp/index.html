@@ -10,6 +10,7 @@
     <fieldset>
       <legend>Registration</legend>
       <form action="/register" method="post">
+        {% csrf_token %}
         <table>
           <tr>
             <td>First Name:</td>
@@ -37,8 +38,15 @@
           </tr>
         </table>
       </form>
-
     </fieldset>
+    {% if messages %}
+      <ul>
+      {% for message in messages %}
+        <li>{{message}}</li>
+      {% endfor %}
+      <ul>
+    {% endif %}
+
   </div>
 </body>
 </html>
