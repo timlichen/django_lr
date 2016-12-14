@@ -1,0 +1,8 @@
+# PROJECT LEVEL URLS
+from django.conf.urls import url, include
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^', include('apps.loginRegApp.urls')),
+    url(r'^admin/', admin.site.urls),
+]
