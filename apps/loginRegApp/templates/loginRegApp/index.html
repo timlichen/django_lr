@@ -34,11 +34,11 @@
           </tr>
           <tr>
             <td>Password:</td>
-            <td><input type="text" name="password"></td>
+            <td><input type="password" name="password"></td>
           </tr>
           <tr>
             <td>Confirm Password:</td>
-            <td><input type="text" name="confirm_password"></td>
+            <td><input type="password" name="confirm_password"></td>
           </tr>
           <tr>
             <td></td>
@@ -46,6 +46,36 @@
           </tr>
         </table>
       </form>
+<<<<<<< HEAD
+    </fieldset>
+    {{request.session.user}}
+    {% for warning in request.session.warnings %}
+    <p>{{warning}}</p>
+    {% endfor %}
+  </div>
+  <div>
+    <fieldset>
+      <legend>Login</legend>
+      <form action="/login" method="post">
+        {% csrf_token %}
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Login"></td>
+          </tr>
+        </table>
+      </form>
+    </fieldset>
+    {{request.session.fail}}
+=======
     </fieldset>
 
     <fieldset>
@@ -68,6 +98,7 @@
       </form>
     </fieldset>
 
+>>>>>>> 66e2efd558275a9e996b695afa052b8c89cf1701
   </div>
 </body>
 </html>
